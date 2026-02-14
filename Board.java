@@ -19,4 +19,16 @@ public class Board {
             System.out.println();
         }
     }
+
+    public boolean dropToken(int column, String symbol) {
+        for(int i = grid.length - 1; i >= 0; i--) {
+            if (grid[i][column].getSymbol().equals(".")) {
+                grid[i][column].setSymbol(symbol);
+
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
