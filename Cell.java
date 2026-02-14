@@ -1,5 +1,11 @@
 public class Cell {
-    public Cell(int row, int column) {
-        
+    private String symbol = ".";
+    
+    public Cell() {
+
+    }
+
+    public String getSymbol(){
+        return this.symbol;
     }
 }
