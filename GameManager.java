@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class GameManager {
-    private Board board = Container.BoardContainer.board;
+    private final Board board = Container.BoardContainer.board;
     private Scanner scanner;
     private String currentSymbol;
 
@@ -9,9 +9,17 @@ public class GameManager {
         this.scanner = new Scanner(System.in);
         this.currentSymbol = Constants.BoardConstants.PLAYER_ONE_SYMBOL;
 
+        System.out.println("Please select the map you want to play in(0-3)");
+        int map = scanner.nextInt();
+
+        Board.whichMapSelected = map;
+
         board.loadCustomMap();
     }
 
+    /**
+     * This function is the base of the game and makes the game run
+     */
     public void startGame() {
         boolean isGameOver = false;
 
@@ -38,6 +46,9 @@ public class GameManager {
         }
     }
 
+    /**
+     * This function makes the current player change after a person makes their move
+     */
     private void switchPlayer() {
         if (currentSymbol.equals("X")) {
             currentSymbol = "O";
