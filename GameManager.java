@@ -2,12 +2,16 @@ import java.util.Scanner;
 
 public class GameManager {
     private final Board board = Container.BoardContainer.board;
+    private GameDisplay display = new GameDisplay(this);
     private Scanner scanner;
     private String currentSymbol;
 
     public GameManager() {
         this.scanner = new Scanner(System.in);
         this.currentSymbol = Constants.BoardConstants.PLAYER_ONE_SYMBOL;
+
+        System.out.println("Please select the map you want to play in(0-3)");
+        int map = scanner.nextInt();
 
         System.out.println("Please select the map you want to play in(0-3)");
         int map = scanner.nextInt();
@@ -49,11 +53,15 @@ public class GameManager {
     /**
      * This function makes the current player change after a person makes their move
      */
-    private void switchPlayer() {
+    public void switchPlayer() {
         if (currentSymbol.equals("X")) {
             currentSymbol = "O";
         } else {
             currentSymbol = "X";
         }
+    }
+
+    public String getCurrentSymbol() {
+        return currentSymbol;
     }
 }

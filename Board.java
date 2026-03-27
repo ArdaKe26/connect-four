@@ -3,8 +3,10 @@ public class Board {
     public static int whichMapSelected = 2;
 
     /**
-     * This is the constructor of the object which sets rows and coloumns of the board
-     * @param rows takes the amount of rows there will be in the board
+     * This is the constructor of the object which sets rows and coloumns of the
+     * board
+     * 
+     * @param rows    takes the amount of rows there will be in the board
      * @param columns takes the amount of columns there will be in the board
      */
     public Board(int rows, int columns) {
@@ -18,7 +20,8 @@ public class Board {
     }
 
     /**
-     * This function is used to print the board to the terminal(Debugging phase usage)
+     * This function is used to print the board to the terminal(Debugging phase
+     * usage)
      */
     public void printBoard() {
         for (int i = 0; i < grid.length; i++) {
@@ -30,7 +33,9 @@ public class Board {
     }
 
     /**
-     * This function is used to change the symbol of the tile when a token is dropped 
+     * This function is used to change the symbol of the tile when a token is
+     * dropped
+     * 
      * @param column takes which columnn that tile is dropped in
      * @param symbol takes which symbol is placed in that cell
      * @return returns true if that column has space for a token to be dropped
@@ -48,8 +53,11 @@ public class Board {
     }
 
     /**
-     * This function checks if a player has won the game after they placed their token
-     * @param symbol takes the symbol to be able to determine if that symbol has won the game
+     * This function checks if a player has won the game after they placed their
+     * token
+     * 
+     * @param symbol takes the symbol to be able to determine if that symbol has won
+     *               the game
      * @return returns true if a player has won the game
      */
     public boolean checkWin(String symbol) {
@@ -106,7 +114,8 @@ public class Board {
 
     /**
      * This function is used to place the obstacle(wall) prop to the game board
-     * @param row takes to be able to place tha wall prop in the correct row
+     * 
+     * @param row    takes to be able to place tha wall prop in the correct row
      * @param column takes to be able to place tha wall prop in the correct column
      */
     public void placeObstacle(int row, int column) {
@@ -118,17 +127,28 @@ public class Board {
     }
 
     /**
-     * This function is used to be able to change the map designs from match to match
+     * This function is used to be able to change the map designs from match to
+     * match
      */
     public void loadCustomMap() {
         String[] selectedMapDesign = MapDesign.emptyMapDesign;
 
-        switch(whichMapSelected){
-            case 0 -> {selectedMapDesign = MapDesign.emptyMapDesign;}
-            case 1 -> {selectedMapDesign = MapDesign.mapDesign1;}
-            case 2 -> {selectedMapDesign = MapDesign.mapDesign2;}
-            case 3 -> {selectedMapDesign = MapDesign.mapDesign3;}
-            default -> {System.out.println("Please select a valid map design");}
+        switch (whichMapSelected) {
+            case 0 -> {
+                selectedMapDesign = MapDesign.emptyMapDesign;
+            }
+            case 1 -> {
+                selectedMapDesign = MapDesign.mapDesign1;
+            }
+            case 2 -> {
+                selectedMapDesign = MapDesign.mapDesign2;
+            }
+            case 3 -> {
+                selectedMapDesign = MapDesign.mapDesign3;
+            }
+            default -> {
+                System.out.println("Please select a valid map design");
+            }
         }
 
         for (int i = 0; i < selectedMapDesign.length; i++) {

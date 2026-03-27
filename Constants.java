@@ -6,4 +6,8 @@ public class Constants {
         public static final String PLAYER_ONE_SYMBOL = "X";
         public static final String PLAYER_TWO_SYMBOL = "O";
     }
+
+    public class displayConstants {
+        public static final int[] SCREEN_DIMENSION_SIZES = { 1000, 800 };
+    }
 }
