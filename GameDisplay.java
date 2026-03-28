@@ -49,7 +49,7 @@ public class GameDisplay {
                 JButton currentCell = buttons[i][j];
                 currentCell.setText(board.grid[i][j].getSymbol());
 
-                // makes all the buttons same color
+                // makes all the buttons same color, correcct it
                 // if (game.getCurrentSymbol().equals("X")) {
                 // currentCell.setBackground(Color.RED);
                 // } else if (game.getCurrentSymbol().equals("O")) {

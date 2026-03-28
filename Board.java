@@ -1,5 +1,5 @@
 public class Board {
-    private Cell[][] grid;
+    public Cell[][] grid;
     public static int whichMapSelected = 2;
 
     /**
