@@ -35,7 +35,12 @@ public class GameManager {
                         board.printBoard();
                         System.out.println("Congrats! " + currentSymbol + " player have won");
                         isGameOver = true;
-                    } else {
+                    } else if(board.isBoardFull()) {
+                        board.printBoard();
+                        System.out.println("The game was a draw due to board being full");
+                        isGameOver = true;
+                    }
+                    else {
                         switchPlayer();
                     }
                 } else {

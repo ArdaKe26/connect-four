@@ -113,6 +113,21 @@ public class Board {
     }
 
     /**
+     * This function checks if the board is full and game is a draw
+     * @param row
+     * @param column
+     */
+    public boolean isBoardFull(){
+        for (int i = 0; i < grid[0].length; i++){
+            if (grid[0][i].getSymbol().equals(".")){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
      * This function is used to place the obstacle(wall) prop to the game board
      * 
      * @param row    takes to be able to place tha wall prop in the correct row
@@ -148,6 +163,7 @@ public class Board {
             }
             default -> {
                 System.out.println("Please select a valid map design");
+
             }
         }
 
