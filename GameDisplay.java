@@ -40,6 +40,7 @@ public class GameDisplay {
                 Constants.displayConstants.SCREEN_DIMENSION_SIZES[1]);
         // jFrame.pack();
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        updateBoardVisuals();
         jFrame.setVisible(true);
     }
 
@@ -47,16 +48,18 @@ public class GameDisplay {
         for (int i = 0; i < Constants.BoardConstants.NUMBER_OF_ROWS; i++) {
             for (int j = 0; j < Constants.BoardConstants.NUMBER_OF_COLUMNS; j++) {
                 JButton currentCell = buttons[i][j];
+                String symbol = board.grid[i][j].getSymbol();
                 currentCell.setText(board.grid[i][j].getSymbol());
 
-                // makes all the buttons same color, correcct it
-                // if (game.getCurrentSymbol().equals("X")) {
-                // currentCell.setBackground(Color.RED);
-                // } else if (game.getCurrentSymbol().equals("O")) {
-                // currentCell.setBackground(Color.YELLOW);
-                // } else {
-                // currentCell.setBackground(Color.CYAN);
-                // }
+                if (symbol.equals("X")) {
+                    currentCell.setBackground(Color.RED);
+                } else if (symbol.equals("O")) {
+                    currentCell.setBackground(Color.YELLOW);
+                } else if (symbol.equals("#")){
+                    currentCell.setBackground(Color.GREEN);
+                } else {
+                    currentCell.setBackground(Color.CYAN);
+                }
             }
         }
     }

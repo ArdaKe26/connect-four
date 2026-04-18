@@ -10,7 +10,7 @@ public class GameManager {
         this.scanner = new Scanner(System.in);
         this.currentSymbol = Constants.BoardConstants.PLAYER_ONE_SYMBOL;
 
-        System.out.println("Please select the map you want to play in(0-3)");
+        System.out.println("Please select the map you want to play in(0-4)");
         int map = scanner.nextInt();
 
         Board.whichMapSelected = map;

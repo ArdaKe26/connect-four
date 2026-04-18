@@ -161,6 +161,9 @@ public class Board {
             case 3 -> {
                 selectedMapDesign = MapDesign.mapDesign3;
             }
+            case 4 -> {
+                selectedMapDesign = MapDesign.mapDesign4;
+            }
             default -> {
                 System.out.println("Please select a valid map design");
 
