@@ -1,3 +1,5 @@
+package io.github.ardake26.connectfour;
+
 public class Cell {
     private String symbol = ".";
     private boolean isObstacle = false;

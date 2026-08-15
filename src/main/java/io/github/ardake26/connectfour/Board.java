@@ -1,6 +1,7 @@
+package io.github.ardake26.connectfour;
+
 public class Board {
     public Cell[][] grid;
-    public static int whichMapSelected = 2;
 
     /**
      * This is the constructor of the object which sets rows and coloumns of the
@@ -134,7 +135,7 @@ public class Board {
      * @param column takes to be able to place tha wall prop in the correct column
      */
     public void placeObstacle(int row, int column) {
-        if (row >= 0 && row <= grid.length && column < grid[0].length && column >= 0) {
+        if (row >= 0 && row < grid.length && column < grid[0].length && column >= 0) {
             if (row > 0) {
                 grid[row][column].setAsObstacle();
             }
@@ -144,11 +145,13 @@ public class Board {
     /**
      * This function is used to be able to change the map designs from match to
      * match
+     *
+     * @param mapIndex takes which map design to load (0-4)
      */
-    public void loadCustomMap() {
+    public void loadCustomMap(int mapIndex) {
         String[] selectedMapDesign = MapDesign.emptyMapDesign;
 
-        switch (whichMapSelected) {
+        switch (mapIndex) {
             case 0 -> {
                 selectedMapDesign = MapDesign.emptyMapDesign;
             }

@@ -1,3 +1,5 @@
+package io.github.ardake26.connectfour;
+
 public class MapDesign {
     public static String[] emptyMapDesign = {
         ".......",
